@@ -40,5 +40,6 @@ Thumbs.db
 ######################
 Client/chore-app/node_modules
 Client/chore-app/e2e
+Clients/chore-app/package-lock.json
 Server/node_modules
 Designs/
