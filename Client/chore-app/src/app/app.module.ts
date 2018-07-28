@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HeaderComponent } from './components/header/header.component';
+import { TodoComponent } from './components/todo/todo.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    TodoComponent
   ],
   imports: [
     BrowserModule,

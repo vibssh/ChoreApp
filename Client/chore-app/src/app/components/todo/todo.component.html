@@ -1,0 +1,12 @@
+<div class="todo">
+    <div class="container">
+        <ul class="list-group">
+            <li class="list-group-item todo-text" [ngClass]="{'done': todo.isDone === true }" *ngFor="let todo of todos" (click)="doneTodo(todo)">
+                {{todo.todoTitle}}
+                <span class="badge badge-success" *ngIf="todo.catId === 1">Personal</span>
+                <span class="badge badge-primary" *ngIf="todo.catId=== 2">Business</span>
+            </li>
+        </ul>
+    </div>
+</div>
+

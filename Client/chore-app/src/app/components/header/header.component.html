@@ -14,17 +14,10 @@
         <div class="app-header__col--dark">
             <div class="container">
                 <div class="app-header__count__wrapper">
-                    <div class="app-header__count__col">
+                    <div class="app-header__count__col" *ngFor="let cat of categories">
                         <div class="app-header__count__col__wrapper">
-                            <span class="count__text">24</span>
-                            <span class="count__text count__text--category">Personal</span>
-                        </div>
-                        
-                    </div>
-                    <div class="app-header__count__col">
-                        <div class="app-header__count__col__wrapper">
-                            <span class="count__text">24</span>
-                            <span class="count__text count__text--category">Business</span>
+                            <span class="count__text">{{cat.catCount}}</span>
+                            <span class="count__text count__text--category">{{cat.catName}}</span>
                         </div>
                     </div>
                 </div>

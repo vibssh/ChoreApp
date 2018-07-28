@@ -1,3 +1,6 @@
+import { ICategory } from './../../interface/i-category';
+import { IToDo } from './../../interface/i-to-do';
+import { TodoService } from './../../service/todo.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -11,10 +14,18 @@ export class HeaderComponent implements OnInit {
     today: any;
     month: any =  ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
-  constructor() { }
+    todos:IToDo[] =[];
+    categories: ICategory[]=[];
+    catOneCount: number = 0;
+    catTwoCount: number = 0;
+
+
+  constructor(private todoService: TodoService) { }
 
   ngOnInit() {
       this.todayDate();
+      this.getTodos();
+      this.getCategories();
   }
 
   todayDate() {
@@ -22,4 +33,18 @@ export class HeaderComponent implements OnInit {
     let currentMonth = this.month[d.getMonth()];
     this.today = currentMonth + " " + d.getDate() + ", " + d.getFullYear();
   }
+
+  getCategories() {
+    this.categories = this.todoService.getCategories();
+    this.categories[0]["catCount"]= this.catOneCount;
+    this.categories[1]["catCount"]= this.catTwoCount;
+  }
+
+  getTodos() {
+    this.todos = this.todoService.getTodoList();
+    this.catOneCount = this.todos.filter(x=>x.catId===1).length;
+    this.catTwoCount = this.todos.filter(x=>x.catId===2).length;
+  }
+
+
 }
