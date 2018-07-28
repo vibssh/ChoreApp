@@ -4,4 +4,32 @@ $breakpoint: (
     md: 768px,
     lg: 992px,
     xl: 1200px
-)
+);
+
+$base-font-size: 16px;
+
+@mixin remsize($prop, $px, $base: $base-font-size) {
+    #{$prop}: $px;
+    //#{$prop} : ($px / $base) * 1em;
+    #{$prop}: ($px / $base) * 1rem;
+    //
+    //Usage :
+    //	@include remsize(font-size, 20px);
+}
+
+/* icons */
+.app-icon {
+    fill: #ffffff;
+    width: 24px;
+    height: 24px; 
+}
+
+/* Typography */
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+h3 {
+    font-weight: 100;
+    font-family: 'Open Sans', sans-serif;
+}

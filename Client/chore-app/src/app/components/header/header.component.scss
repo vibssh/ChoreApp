@@ -1,0 +1,94 @@
+/* Import Variable */
+@import '../../../styles-variables.scss';
+
+/* Header Styles */
+
+.app-header {
+  background: url('../../../assets/images/header.jpg') no-repeat;
+  background-position: 50% 75%;
+  background-size: cover;
+  border-bottom: 5px solid #4ea9ed;
+  min-height: 435px; 
+  display: table;
+  width: 100%;
+  position: relative;
+}
+
+.app-header__col {
+    display: table-cell;
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+    position: relative;
+}
+
+.app-header__col--dark {
+    position: absolute;
+    right: 0;
+    top:0;
+    bottom: 0;
+    width: 40%;
+    background: rgba(0,0,0,0.4);
+}
+
+.app-icon--menu {
+    height: 44px;
+    width: 44px;
+}
+
+.app-title {
+    color: #ffffff;
+    margin-top: 45px;
+    font-weight: 200;
+}
+
+.app-sub-title {
+    color: #ffffff;
+    font-style: italic;
+    margin-top: -1em;
+    padding-left: 0.75em;
+}
+
+.app-today-date {
+    color: #8b94af;
+    font-size: 2rem;
+    font-weight: 100;
+    padding-left: 0.5em;
+    margin-top: 81px;
+}
+
+.app-header__count__wrapper {
+    display: table;
+    width: 90%;
+    height: 450px;
+    text-align: left;
+
+    @media (min-width: map-get($breakpoint, lg)){
+        width: 75%;
+    }
+}
+
+.app-header__count__col {
+    display: table-cell;
+    vertical-align: middle;
+    height: 100%;
+    text-align: left;
+}
+
+.app-header__count__col__wrapper {
+    text-align: right;
+    max-width: 200px;
+}
+
+.count__text {
+    color: #ffffff;
+    display: block;
+    font-weight: 100;
+    @include remsize(font-size, 25px);
+    line-height: 1;
+
+    @media (min-width: map-get($breakpoint, lg )){
+        @include remsize(font-size, 32px);
+    }
+
+}
